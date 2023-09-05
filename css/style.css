@@ -12,6 +12,9 @@ h4 {
     color: #000000;
     padding-left: 16px;
 }
+.nav li:hover {
+    border-top: solid 2px #0065FC;
+}
 
 h5 {
     font-family: 'Raleway';
@@ -86,9 +89,7 @@ h6 {
     border-top: solid 2px transparent;
 }
 
-.nav li:hover {
-    border-top: solid 2px #0065FC;
-}
+
 
 .nav li a {
     font-family: 'Raleway Regular';
@@ -343,6 +344,7 @@ article.item {
 .picture {
     width: 100%;
     border-radius: 20px 20px 0 0;
+    
 }
 
 
@@ -531,10 +533,18 @@ footer a {
         width: 60%;
         padding: 0px 7px;
     }
+    .nav li:hover {
+        border-top: none;
+    }
+  
 
 }
 
 @media screen and (max-width: 768px) {
+    .nav li a:hover {
+        border-top:none;
+      }
+     
 
     h4 {
         margin: 5px 0px;
@@ -690,10 +700,7 @@ padding: 17px 7px;
         text-align: center;
     }
 
-    .nav li:hover {
-        border-top: solid 0px transparent;
-        border-bottom: solid 2px #0065FC;
-    }
+   
 
     .search {
         width: 100%;
@@ -738,6 +745,14 @@ font-size: 11px;
 font-style: normal;
 font-weight: 700;
 line-height: normal;
+    }
+    .picture {
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+        height: 100%;
+      }
+      .nav li:hover {
+        border-bottom: solid 2px #0065FC;
     }
 }
 
