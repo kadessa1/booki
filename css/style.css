@@ -1,8 +1,11 @@
-@media only screen and (max-width: 1440px) {
-
+/* ######### */
 body {
-    margin: 0 40px !important
+    margin: 0 5% 0 5% !important;
+    max-width: 1440px;
+    min-width: 375px;
+
 }
+
 
 h4 {
     font-family: 'Raleway';
@@ -98,7 +101,7 @@ figure {
 }
 
 .nav li a {
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -121,16 +124,16 @@ ul {
 }
 
 .search-section h2 {
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 22px;
     color: #000000;
     margin: 0 0 5px 0;
 }
 
 .search-section h6 {
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -143,17 +146,17 @@ ul {
     border-radius: 15px;
     border: 1px solid #F2F2F2;
     margin-top: 25px;
-    width: 35%;
+	width:35%;
+    max-width: 375px;
 }
 
 .search .fa-map-marker {
     justify-content: start;
-    height: 51px;
     text-align: center;
     border-radius: 15px 0px 0px 15px;
     background: #F2F2F2;
     padding-top: 4px;
-    width: 14%;
+    width: 50px;
 }
 
 .search .fa-map-marker:before {
@@ -161,20 +164,22 @@ ul {
 }
 
 .search input {
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    line-height: 21px;
+    line-height: normal;
     color: #000000;
-    height: 50px;
+    height: 21px;
     border: 0px solid #F2F2F2;
-    margin: 0;
-    padding: 0 0 0 13px;
+   
+    margin: 14px 67px 0 0;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     display: block;
-    width: 100%;
+    width: 147px;
+    text-align: center;
 }
 
 .search input::placeholder {
@@ -195,7 +200,8 @@ ul {
     border: 1px solid #0065FC;
     border-radius: 0px 15px 15px 0px;
     color: #FFFFFF;
-    width: 23%;
+    width: 123px;
+    font-size: 18px;
 }
 
 .search-section button i {
@@ -216,6 +222,7 @@ ul {
 }
 
 .filtres h2 {
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
@@ -234,11 +241,12 @@ ul {
     float: left;
     border: solid 2px #F0F2F6;
     border-radius: 29px;
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
     font-size: 17px;
     padding: 10px;
-    margin: 0 5px;
+    margin: 0 10px;
     background-position: 10px 10px, left;
     background-repeat: no-repeat;
     text-decoration: none;
@@ -255,8 +263,41 @@ ul {
     padding: 4px 4px 3px 4px;
 }
 
+/** animation survol avec @keyframes **/
+.filtre:hover{
+    animation: zoom-in-zoom-out 1s ease-out forwards;
+}
 
+@keyframes zoom-in-zoom-out {
+    0% {
+    transform: scale(1, 1);
+    }
+    40% {
+    transform: scale(1.2, 1.2);
+    }
+    100% {
+    transform: scale(1.1);
+    }
+    }
 
+@keyframes filtres-unhover {
+0% {
+transform: scale(1.1);
+background-color: #DEEBFF;
+}
+40% {
+transform: scale(0.9);
+}
+100% {
+transform: scale(1);
+background-color: white;
+}
+}
+
+.filtre:not(:hover) {
+animation: filtres-unhover 1s ease-in-out forwards;
+} 
+      
 .result-filtres {
     display: flex;
     flex-direction: row;
@@ -276,7 +317,7 @@ ul {
 }
 
 .result-filtres p {
-    font-family: 'Raleway Regular';
+    font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -309,13 +350,21 @@ ul {
 }
 
 .result_list h2 {
+    font-family: 'Raleway';
     margin-top: 0px;
     margin-bottom: 25px;
 }
 
 .result_list h3 {
+    font-family: 'Raleway';
     margin-top: 30px;
     margin-bottom: 0;
+}
+.result_list a {
+    text-decoration: none;
+}
+.result_list a h2 , h3{
+    color: rgb(0, 0, 0);
 }
 
 .popular {
@@ -326,8 +375,14 @@ ul {
     display: flex;
     flex-direction: column;
 }
+.popular .title a, .popularlist a{
+    text-decoration: none;
+    color: #000000;;
+  }
 
+  
 .popular h2 {
+    font-family: 'Raleway';
     margin: 0px;
 }
 
@@ -337,7 +392,9 @@ article.item {
     width: 29.8%;
     border: 5px solid #ffffff;
 }
-
+article.item a {
+    text-decoration: none;
+}
 .picture {
     width: 100%;
     height: 100%;
@@ -368,7 +425,9 @@ article.item h6 {
     border-radius: 20px;
     margin-top: 25px;
 }
-
+article.item-popular {
+    cursor: pointer;
+}
 article.item-popular h5,
 article.item-popular h6 {
     margin: 5px 0px;
@@ -391,7 +450,15 @@ article.item figure {
 }
 
 .activity h2 {
+    font-family: 'Raleway';
     margin: 60px 0 20px 0;
+}
+
+.activity a {
+    text-decoration: none;
+}
+.activity a h2 , h3{
+    color: rgb(0, 0, 0);
 }
 
 .activityList {
@@ -427,12 +494,16 @@ article.item figure {
 .item-activity img {
     width: 100%;
     height: 89%;
+    object-fit: cover;
 }
 
 .activity {
     margin-bottom: 51px;
 }
-
+    .item-activity a {
+        text-decoration: none;
+       
+    }
 .item-activity h4 {
     margin-left: 19px;
 }
@@ -443,6 +514,7 @@ footer {
     flex-direction: row;
     padding-left: 70px;
     padding-top: 30px;
+	padding-bottom: 50px;
 }
 
 footer a {
@@ -463,11 +535,13 @@ footer a {
 
     margin-left: 85px;
 }
+.link-footer a {
+   text-decoration: none;
 }
 @media screen and (max-width: 992px) {
     h4 {
         margin: 5px 0px;
-        padding-left: 15px;
+        padding-left: 5px;
     }
 
     h5 {
@@ -500,6 +574,7 @@ footer a {
         width: 90%;
         margin-top: 40px;
     }
+  
 
     .popular .popularlist {
         display: flex;
@@ -534,6 +609,7 @@ footer a {
 
     h4 {
         margin: 5px 0px;
+
     }
 
     h5 {
@@ -640,6 +716,11 @@ footer a {
     .activity {
         margin: 0 20px 30px 20px;
     }
+	.activity h2 {
+  
+	    width: 200px;
+}
+
 
     footer {
         background-color: #F2F2F2;
@@ -693,6 +774,7 @@ footer a {
 
     .search {
         width: 100%;
+		max-width:300px;
     }
 
     .search .fa-map-marker {
@@ -712,9 +794,9 @@ footer a {
         display: none;
     }
 
-    .types-filtres a {
-        font-size: 9px;
-    }
+   /* .types-filtres a {
+        font-size: 15px;
+    }*/
 
     .types-filtres {
         margin-left: 0px;
@@ -731,7 +813,7 @@ footer a {
     }
 }
 
-@media screen and (max-width: 375px) {
+/**@media screen and (max-width: 375px) {
     .types-filtres a {
         width: 31%;
         margin-top: 12px;
@@ -743,4 +825,4 @@ footer a {
         width: 27%;
         margin-top: 12px;
     }
-}
+}**/
